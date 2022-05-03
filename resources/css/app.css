@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .rich-link{
+        @apply text-gray-600 transition-all duration-300 ease-in-out;
+    }
+
+    .rich-link:hover{
+        @apply text-yellow-500;
+    }
+
+    .rich-link-light{
+        @apply text-gray-300 transition-all duration-300 ease-in-out;
+    }
+
+    .rich-link-light:hover{
+        @apply text-yellow-500;
+    }
+
+    .rich-block{
+        @apply bg-transparent transition-all duration-300 ease-in-out;
+    }
+
+    .rich-block:hover{
+        @apply bg-gray-700;
+    }
+
+    .big-text{
+        @apply text-slate-300 font-semibold text-4xl break-words;
+    }
+
+    .input{
+        @apply bg-gray-700 block w-200 rounded-md my-2 px-2.5 py-2 text-base placeholder-gray-400;
+    }
+
+    .input:focus{
+        outline: none;
+    }
+
+    .button{
+        @apply px-4 py-2 bg-yellow-500 text-white transition-colors duration-300 rounded-lg;
+    }
+
+    .button:hover{
+        @apply bg-yellow-600;
+    }
+
+    .overlay{
+        @apply h-full w-full absolute left-0 top-0;
+        background: rgba(0,0,0,.70);
+    }
+
+    .alert-container{
+        @apply w-full h-full bg-transparent fixed top-0 right-0 p-5;
+    }
+
+    .alert{
+        @apply text-white m-2 p-3 rounded-md inline-block;
+    }
+
+    .alert-error{
+        @apply bg-red-500;
+    }
+
+    .alert-info{
+        @apply bg-blue-500;
+    }
+
+    .alert-success{
+        @apply bg-green-500;
+    }
+
+    .alert-success{
+        @apply bg-yellow-500;
+    }
+}
+
