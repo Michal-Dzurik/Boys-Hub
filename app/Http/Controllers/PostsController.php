@@ -47,7 +47,9 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id){
-        return view('posts.show');
+        $post = Post::find($id);
+        if ($post == null) abort('404');
+        return view('posts.show')->withPost($post);
     }
 
     /**

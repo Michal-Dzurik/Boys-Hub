@@ -37,4 +37,8 @@ class Tag extends Authenticatable
      */
     protected $casts = [
     ];
+
+    public function post(){
+        return $this->belongsTo(Post::class);
+    }
 }

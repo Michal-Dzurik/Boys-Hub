@@ -20,10 +20,19 @@
             <a href="{{ url("/") }}" class="inline-block">
                 <img class="h-8" src="{{ asset('images/logo.png') }}" alt="">
             </a>
-            <ul class="float-right mr-1.5">
-                <li>
+            <ul class="float-right mr-1.5 text-right">
+                <li class="inline-block">
                     <a class="rich-link-light" href="{{ url("post/") }}">Posts</a>
                 </li>
+                @if(\Illuminate\Support\Facades\Auth::check())
+                    <li class="inline-block">
+                        <a class="rich-link-light pl-2.5" href="{{ url("user", \Illuminate\Support\Facades\Auth::id()) }}">My Profile</a>
+                    </li>
+
+                    <li class="inline-block">
+                        <a class="rich-link pl-2.5" href="{{ url("logout")}}">Logout</a>
+                    </li>
+                @endif
             </ul>
         </nav>
     @show
@@ -45,5 +54,9 @@
             You can either <a href="{{ url("login/")  }}" class="rich-link-light">Log in</a> or <a href="{{ url("register/")  }}" class="rich-link-light">Register</a>
         </div>
     @endif
+
+    <script src="{{ asset('js/jQuery.js') }}" rel="script"></script>
+    <script src="{{ asset('js/script.js') }}" rel="script"></script>
+
     </body>
 </html>

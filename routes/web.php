@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use \App\Http\Controllers\PostsController;
+use \App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,11 @@ Route::get('/register', [RegisterController::class, 'show']);
 Route::post('/register',[RegisterController::class,'store']);
 
 Route::get('/login', [LoginController::class, 'show']);
-Route::post('/login',[LoginController::class,'store']);
+Route::post('/login',[LoginController::class,'check']);
+Route::get('/logout', [LoginController::class, 'destroy']);
 
 Route::resource('/post', PostsController::class);
+
+Route::get("/user/{id}",[UserController::class,'show']);
+
 

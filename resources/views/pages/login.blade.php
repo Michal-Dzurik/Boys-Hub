@@ -13,7 +13,7 @@
         </div>
         <div class="inline-block bg-gray-800 py-8 px-12 h-full flex flex-col justify-center">
             <h2 class="text-2xl mb-4 font-bold">Login</h2>
-            <form autocomplete="off" action="" method="POST">
+            <form autocomplete="off" action="{{ url()->current() }}" method="POST">
                 {{ csrf_field() }}
                 <input class="input" type="email" name="email" id="email" placeholder="Email">
                 <input class="input" type="password" name="password" id="password" placeholder="Password">
