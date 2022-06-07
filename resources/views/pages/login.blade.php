@@ -18,7 +18,10 @@
                 <input class="input" type="email" name="email" id="email" placeholder="Email">
                 <input class="input" type="password" name="password" id="password" placeholder="Password">
 
-                <button type="submit" class="button mt-4">Login</button>
+                <div>
+                    <button type="submit" class="button mt-4">{{ trans('auth.login') }}</button>
+                    <a href="{{ route("github") }}" type="submit" class="button mt-4 bg-black">Github</a>
+                </div>
             </form>
         </div>
 

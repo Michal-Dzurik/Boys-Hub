@@ -14,9 +14,7 @@ class RegisterController extends Controller{
 
     public function show(){
         if (Auth::check()){
-            $posts = Post::all();
-
-            return view('posts.index')->withPosts($posts);
+            return view('posts.index')->withPosts(Post::paginate(15))->withTitle("Posts");
         }
         return view('pages.register');
     }

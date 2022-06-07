@@ -20,7 +20,10 @@
 
                 <input class="input" type="password" name="password" id="password" placeholder="Password">
 
-                <button type="submit" class="button mt-4">Register</button>
+                <div>
+                    <button type="submit" class="button mt-4">Register</button>
+                    <a href="{{ route("github") }}" type="submit" class="button mt-4 bg-black">Github</a>
+                </div>
             </form>
 
         </div>

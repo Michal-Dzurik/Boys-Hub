@@ -1,6 +1,6 @@
 @extends('pages.master')
 
-@section('title','hello here some posts')
+@section('title',$title)
 
 @section('content')
     <div class="text-left bg-gray-800 rounded-lg  w-full max-w-650 overflow-hidden p-2.5">
@@ -9,6 +9,7 @@
             <article class="rich-block rounded-md mt-1">
             <a href="{{ url("post",$post->id) }}" class="text-white px-8 py-6 block">
                 <h1 class="font-bold text-yellow-500">{{ $post->heading }}</h1>
+
                 <p class="text-gray-400">{{ $post->teaser }}..</p>
                 <time class="text-gray-500 font-normal text-sm">{{ $post->created_at }}</time>
             </a>
@@ -17,5 +18,7 @@
         @empty
             Nothing here man :/
         @endforelse
+
+        {!! $posts->render() !!}
     </div>
 @stop

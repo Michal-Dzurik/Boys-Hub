@@ -26,13 +26,26 @@
                 </li>
                 @if(\Illuminate\Support\Facades\Auth::check())
                     <li class="inline-block">
-                        <a class="rich-link-light pl-2.5" href="{{ url("user", \Illuminate\Support\Facades\Auth::id()) }}">My Profile</a>
+                        <a class="rich-link-light pl-2.5" href="{{ url("user") }}">My Profile</a>
                     </li>
 
                     <li class="inline-block">
                         <a class="rich-link pl-2.5" href="{{ url("logout")}}">Logout</a>
                     </li>
                 @endif
+            </ul>
+            <ul class="float-right mr-5">
+                <li class="px-2.5 rounded-xl bg-white">
+                    @foreach(Config::get('language') as $lang => $language)
+                        <a href="{{ url('lang',$lang) }}" class="">
+                            @if( $lang == App::getLocale())
+                                <strong>{{ $lang }}</strong>
+                            @else
+                                {{ $lang }}
+                            @endif
+                        </a>
+                    @endforeach
+                </li>
             </ul>
         </nav>
     @show

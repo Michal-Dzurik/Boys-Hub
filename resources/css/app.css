@@ -39,6 +39,14 @@
         outline: none;
     }
 
+    .textarea{
+        @apply bg-gray-700 block w-200 rounded-md my-2 px-2.5 py-2 text-base placeholder-gray-400 min-w-400 w-full;
+    }
+
+    .textarea:focus{
+        outline: none;
+    }
+
     .button{
         @apply px-4 py-2 bg-yellow-500 text-white transition-colors duration-300 rounded-lg;
     }
@@ -52,6 +60,9 @@
         background: rgba(0,0,0,.70);
     }
 
+    .tag{
+        @apply inline-block text-white rounded-md bg-yellow-500 px-2 py-1 mr-2;
+    }
 
     .alert-container{
         @apply w-full h-full fixed top-0 right-0 p-5;

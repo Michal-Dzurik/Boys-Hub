@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('posts/',[\App\Http\Controllers\api\PostController::class,"showAll"]);
+Route::get('posts/{id}',[\App\Http\Controllers\api\PostController::class,"selectById"]);
+
+Route::get('users/',[\App\Http\Controllers\api\UserController::class,"showAll"]);
+Route::get('users/{id}',[\App\Http\Controllers\api\UserController::class,"selectById"]);
+Route::post('users/create/',[\App\Http\Controllers\api\UserController::class,"store"]);
